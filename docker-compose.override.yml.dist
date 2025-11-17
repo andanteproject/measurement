@@ -1,0 +1,20 @@
+# This file is a template for local development overrides
+# Copy this file to docker-compose.override.yml and customize as needed:
+#   cp docker-compose.override.yml.dist docker-compose.override.yml
+#
+# docker-compose.override.yml is automatically loaded by docker-compose
+# and merges with docker-compose.yml
+
+services:
+  php:
+    build:
+      target: dev
+    environment:
+      # Xdebug configuration for local development
+      - XDEBUG_MODE=coverage,debug
+      - XDEBUG_CONFIG=client_host=host.docker.internal
+      # For Linux, you might need to use your actual IP:
+      # - XDEBUG_CONFIG=client_host=192.168.1.x
+    # Uncomment to expose Xdebug port
+    # ports:
+    #   - "9003:9003"

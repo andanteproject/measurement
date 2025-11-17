@@ -1,0 +1,58 @@
+{
+    "name": "andanteproject/measurement",
+    "description": "Modern, type-safe PHP library for handling physical measurements with automatic unit conversion and internationalization",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "measurement",
+        "units",
+        "conversion",
+        "physics",
+        "quantity",
+        "dimensional-analysis",
+        "internationalization",
+        "i18n",
+        "type-safe"
+    ],
+    "authors": [
+        {
+            "name": "Cristoforo Cervino",
+            "homepage": "https://github.com/cristoforocervino"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "brick/math": "^0.11",
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^10.1"
+    },
+    "suggest": {
+        "brick/math": "For precise arbitrary-precision decimal arithmetic (recommended). Install GMP or BCMath extension for better performance.",
+        "ext-gmp": "Significantly speeds up brick/math calculations (recommended with brick/math)",
+        "ext-bcmath": "Alternative to GMP for speeding up brick/math calculations",
+        "ext-intl": "Required for locale-aware number formatting"
+    },
+    "autoload": {
+        "psr-4": {
+            "Andante\\Measurement\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Andante\\Measurement\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

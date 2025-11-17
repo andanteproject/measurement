@@ -1,0 +1,14 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php81/Dockerfile
+      # Use 'ci' target by default (faster, uses PCOV)
+      # Override with 'dev' target in docker-compose.override.yml for local development with Xdebug
+      target: ci
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    command: sleep infinity
